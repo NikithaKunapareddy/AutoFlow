@@ -1,0 +1,2 @@
+Step 1:::process:::Start planning the trip.:::next::Step 2
+Step 2:::terminal:::Finish planning.:::

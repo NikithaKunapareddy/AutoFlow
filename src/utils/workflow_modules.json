@@ -1,0 +1,92 @@
+[
+    {
+        "name": "flight_search",
+        "description": "Finds flights based on user preferences",
+        "requires": ["flight_details"],
+        "produces": ["flights"]
+    },
+    {
+        "name": "hotel_search",
+        "description": "Finds hotels based on destination and dates",
+        "requires": ["destination", "dates"],
+        "produces": ["hotels"]
+    },
+    {
+        "name": "itinerary_builder",
+        "description": "Builds a travel itinerary from available data",
+        "requires": ["flights", "hotels"],
+        "produces": ["itinerary"]
+    },
+    {
+        "name": "restaurant_recommendation",
+        "description": "Suggests restaurants based on location and cuisine preferences",
+        "requires": ["location", "cuisine_preferences"],
+        "produces": ["restaurant_list"]
+    },
+    {
+        "name": "weather_forecast",
+        "description": "Provides weather forecast for a given destination and date",
+        "requires": ["destination", "date"],
+        "produces": ["weather_report"]
+    },
+    {
+        "name": "local_events",
+        "description": "Finds local events happening at the destination during travel dates",
+        "requires": ["destination", "dates"],
+        "produces": ["event_list"]
+    },
+    {
+        "name": "sightseeing_service",
+        "description": "Suggests sightseeing spots in a city",
+        "requires": ["destination"],
+        "produces": ["sightseeing_list"]
+    },
+    {
+        "name": "currency_conversion",
+        "description": "Converts currency based on destination country",
+        "requires": ["amount", "from_currency", "to_currency"],
+        "produces": ["converted_amount"]
+    },
+    {
+        "name": "travel_insurance",
+        "description": "Provides travel insurance options based on trip details",
+        "requires": ["destination", "dates", "traveler_info"],
+        "produces": ["insurance_options"]
+    },
+    {
+        "name": "visa_requirements",
+        "description": "Checks visa requirements for a given nationality and destination",
+        "requires": ["nationality", "destination"],
+        "produces": ["visa_info"]
+    },
+    {
+        "name": "packing_list_generator",
+        "description": "Generates a packing list based on destination, weather, and trip duration",
+        "requires": ["destination", "dates", "weather_report"],
+        "produces": ["packing_list"]
+    },
+    {
+        "name": "emergency_contacts",
+        "description": "Provides emergency contact numbers for the destination country",
+        "requires": ["destination"],
+        "produces": ["emergency_numbers"]
+    },
+    {
+        "name": "language_translation",
+        "description": "Translates common phrases to the local language of the destination",
+        "requires": ["destination", "phrases"],
+        "produces": ["translated_phrases"]
+    },
+    {
+        "name": "public_transport_info",
+        "description": "Provides public transport options and schedules for the destination city",
+        "requires": ["destination", "dates"],
+        "produces": ["transport_options"]
+    },
+    {
+        "name": "photo_spots",
+        "description": "Suggests the best photo spots in the destination city",
+        "requires": ["destination"],
+        "produces": ["photo_spot_list"]
+    }
+]

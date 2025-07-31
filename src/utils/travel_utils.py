@@ -76,13 +76,13 @@ def convert_to_json_with_gpt(text, openai_key, max_fail=3, model_name='gpt-4-110
 
 
 def get_baseline_result(args, idx):
-    baseline_result_path = os.path.join(args.results_dir, args.task, f"baseline_{args.set_type}.jsonl")
+    baseline_result_path = os.path.join(args.results_dir, args.task, f"baseline_{args.dataset}.jsonl")
     baseline_results = ReadLineFromFile(baseline_result_path)
     return baseline_results[idx]
 
 
 def get_result_file(args):
-    result_file = os.path.join(args.results_dir, args.task, f"{args.set_type}_{args.model_name.replace('/','_')}_{args.get_observation}_{args.results_name}.jsonl")
+    result_file = os.path.join(args.results_dir, args.task, f"{args.dataset}_{args.model_name.replace('/','_')}_{args.get_observation}_{args.results_name}.jsonl")
     if not os.path.exists(os.path.join(args.results_dir, args.task)):
         os.makedirs(os.path.join(args.results_dir, args.task))
     return result_file

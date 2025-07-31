@@ -5,6 +5,15 @@ import sys
 import json
 from vllm import LLM, SamplingParams
 
+from vllm import LLM, SamplingParams
+
+def extract_before_parenthesis(s):
+    """
+    Extracts the part of the string before the first parenthesis.
+    Example: "foo(bar)" -> "foo"
+    """
+    match = re.search(r'^(.*?)\(', s)
+    return match.group(1) if match else s
 
 def ReadLineFromFile(path):
     print(path)
@@ -213,11 +222,22 @@ def check_tool_name(client, flow_ptr, messages, tool_list, model_name, temperatu
     return tool_list[response - 1], total_price
 
 def get_response_from_client(client, messages, model_name, temperature=1., stop=None):
+    # Gemini model support
+    if model_name and 'gemini' in model_name.lower():
+        return get_response_from_gemini(client, messages, model_name, temperature, stop)
+    # vLLM (non-GPT, non-Gemini)
     if 'gpt' not in model_name:
         return get_response_from_vllm(client, messages, model_name, temperature, stop)
-    else:
-        return get_response_from_gpt(client, messages, model_name, temperature, stop)
+    # OpenAI GPT
+    return get_response_from_gpt(client, messages, model_name, temperature, stop)
 
+
+def get_response_from_gemini(client, messages, model_name, temperature=1., stop=None):
+    # Gemini expects a single string prompt, not a list of messages
+    prompt = "\n".join([m["content"] for m in messages])
+    # .generate_content returns a response object with .text
+    response = client.generate_content(prompt)
+    return response.text, 0.0
 
 def get_response_from_vllm(client, messages, model_name, temperature=1., stop=None):
     if stop is None:
@@ -246,12 +266,6 @@ def get_response_from_gpt(client, messages, model_name, temperature=1., stop=Non
     )
     total_prompt_tokens = response.usage.prompt_tokens
     total_completion_tokens = response.usage.completion_tokens
-    price = calc_cost_w_prompt(total_prompt_tokens, model_name) + calc_cost_w_completion(total_completion_tokens, model_name)
-    return response.choices[0].message.content, price
-
-def extract_before_parenthesis(s):
-    match = re.search(r'^(.*?)\([^)]*\)', s)
-    return match.group(1) if match else s
 
 
 def openai_unit_price(model_name,token_type="prompt"):

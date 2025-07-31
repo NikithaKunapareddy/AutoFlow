@@ -13,7 +13,7 @@ import numpy as np
 class GoogleDistanceMatrix:
     def __init__(self, subscription_key: str="") -> None:
         self.gplaces_api_key: str = subscription_key
-        self.data =  pd.read_csv('../travel_database/googleDistanceMatrix/distance.csv')
+        self.data =  pd.read_csv('travel_database/googleDistanceMatrix/distance.csv')
         print("GoogleDistanceMatrix loaded.")
 
     def run(self, origin, destination, mode='driving'):

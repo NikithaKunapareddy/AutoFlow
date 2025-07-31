@@ -4,7 +4,7 @@ from typing import Optional
 from utils.flow_utils import extract_before_parenthesis
 
 class RestaurantSearch:
-    def __init__(self, path="../travel_database/restaurants/clean_restaurant_2022.csv"):
+    def __init__(self, path="travel_database/restaurants/clean_restaurant_2022.csv"):
         self.path = path
         self.data = pd.read_csv(self.path).dropna()[['Name','Average Cost','Cuisines','Aggregate Rating','City']]
         print("Restaurants loaded.")

@@ -21,8 +21,8 @@ restaurants = RestaurantSearch()
 googleDistanceMatrix = GoogleDistanceMatrix()
 attractions = AttractionSearch()
 
-city_state_set = open('../travel_database/background/citySet_with_states.txt','r').read().split('\n')
-city_state_map = {x:y for x,y in [unit.split('\t') for unit in city_state_set]}
+city_state_set = open('travel_database/background/citySet_with_states.txt','r').read().split('\n')
+city_state_map = {x:y for x,y in (unit.split('\t') for unit in city_state_set if unit.strip())}
 
 
 def load_line_json_data(filename):

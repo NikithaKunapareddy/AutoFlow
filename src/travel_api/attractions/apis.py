@@ -5,7 +5,7 @@ from utils.flow_utils import extract_before_parenthesis
 
 
 class AttractionSearch:
-    def __init__(self, path="../travel_database/attractions/attractions.csv"):
+    def __init__(self, path="travel_database/attractions/attractions.csv"):
         self.path = path
         self.data = pd.read_csv(self.path).dropna()[['Name','Latitude','Longitude','Address','Phone','Website',"City"]]
         print("Attractions loaded.")

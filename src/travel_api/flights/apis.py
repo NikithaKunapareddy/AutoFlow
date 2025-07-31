@@ -5,7 +5,7 @@ from utils.flow_utils import extract_before_parenthesis
 
 class FlightSearch:
 
-    def __init__(self, path="../travel_database/flights/clean_Flights_2022.csv"):
+    def __init__(self, path="travel_database/flights/clean_Flights_2022.csv"):
         self.path = path
         self.data = None
 
