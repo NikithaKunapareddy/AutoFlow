@@ -1,0 +1,6 @@
+Name,Latitude,Longitude,Address,Phone,Website,City
+Central Park,40.785091,-73.968285,"New York, NY 10024","+1 212-310-6600",https://www.centralparknyc.org,New York
+Eiffel Tower,48.858370,2.294481,"Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France","+33 892 70 12 39",https://www.toureiffel.paris,Paris
+Louvre Museum,48.860611,2.337644,"Rue de Rivoli, 75001 Paris, France","+33 1 40 20 50 50",https://www.louvre.fr,Paris
+Golden Gate Bridge,37.819929,-122.478255,"Golden Gate Bridge, San Francisco, CA",,"https://www.goldengate.org",San Francisco
+Colosseum,41.890210,12.492231,"Piazza del Colosseo, 1, 00184 Roma RM, Italy","+39 06 3996 7700",https://parcocolosseo.it,Rome

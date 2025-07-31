@@ -1,0 +1,10 @@
+New York	NY
+San Francisco	CA
+Paris	France
+London	England
+Rome	Italy
+Boston	MA
+Los Angeles	CA
+Lyon	France
+Manchester	England
+Milan	Italy

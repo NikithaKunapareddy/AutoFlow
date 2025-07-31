@@ -1,0 +1,4 @@
+Flight Number,Price,DepTime,ArrTime,ActualElapsedTime,FlightDate,OriginCityName,DestCityName,Distance
+AA123,200,08:00,10:00,120,2022-01-01,New York,Los Angeles,2451
+UA456,150,09:30,12:00,150,2022-01-02,Chicago,Miami,1197
+DL789,180,14:00,16:30,150,2022-01-03,San Francisco,Seattle,679
